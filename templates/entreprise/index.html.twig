@@ -1,0 +1,24 @@
+{% extends 'home/index.html.twig' %}
+
+{% block title %}Stats{% endblock %}
+
+{% block content %}
+{% if stats == null %}
+    no stats are available
+    {% else %}
+        <div class="container">
+            <div class="row" style="margin-left: -10% ; margin-right: -10% ; margin-top: 5%">
+    {% for name,number in stats %}
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem; margin-left: 2%">
+                <div class="card-header">{{name}}</div>
+                <div class="card-body">
+                    <h5  class="card-title">{{number}}</h5>
+                </div>
+            </div>
+
+    {% endfor %}
+            </div>
+        </div>
+{% endif %}
+{% endblock %}
+
